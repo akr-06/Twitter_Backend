@@ -1,6 +1,7 @@
 import express from 'express';
 import connectDB from './config/database.js';
 import morgan from 'morgan';
+import apiRoutes from './routes/index.js';
 import dotenv from 'dotenv';
 import mongoose, { mongo } from 'mongoose';
 dotenv.config();
@@ -8,6 +9,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(morgan('combined'));
+app.use('/api',apiRoutes);
 
 const PORT = process.env.PORT;
 const MONGO_URL = process.env.MONGO_URL;
