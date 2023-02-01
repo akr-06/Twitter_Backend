@@ -19,7 +19,13 @@ const commetSchema = new mongoose.Schema({
         type : mongoose.Schema.Types.ObjectId,
         required : true,
         refPath : 'onModel'
-    }
+    },
+    comment : [
+        {
+            type : mongoose.Schema.Types.ObjectId,
+            ref : 'Comment'
+        }
+    ]
 },{timestamps : true});
 
 export default mongoose.model('Comment', commetSchema);
