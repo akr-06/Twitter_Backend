@@ -7,8 +7,8 @@ import { signup, login } from '../../controllers/auth-controller.js';
 import {authenticate} from '../../middlewares/authenticate.js';
 
 router.route('/tweets').post(authenticate,createTweet);
-router.route('/likes/toggle').post(toggleLike);
-router.route('/comments').post(createComment);
+router.route('/likes/toggle').post(authenticate,toggleLike);
+router.route('/comments').post(authenticate,createComment);
 router.route('/tweets/:id').get(getTweet);
 router.route('/signup').post(signup);
 router.route('/login').post(login);

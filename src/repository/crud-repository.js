@@ -23,6 +23,7 @@ class CrudRepository{
 
     async get(id){
         try {
+            console.log(id);
             const result = await this.model.findById(id);
             return result;
         } catch (error) {
