@@ -1,4 +1,4 @@
-import like from "../models/like.js";
+import Like from "../models/like.js";
 import {LikeRepository, TweetRepository} from "../repository/index.js";
 
 class LikeService {

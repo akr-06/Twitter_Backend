@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(morgan('combined'));
+app.use(morgan('tiny'));
 app.use('/api',apiRoutes);
 
 const PORT = process.env.PORT;
