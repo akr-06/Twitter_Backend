@@ -5,10 +5,15 @@ import apiRoutes from './routes/index.js';
 import dotenv from 'dotenv';
 import mongoose, { mongo } from 'mongoose';
 dotenv.config();
+import passport from 'passport';
+import { passportAuth } from './config/jwt-middleware.js';
+
 
 const app = express();
 app.use(express.json());
 app.use(morgan('tiny'));
+app.use(passport.initialize());
+passportAuth(passport);
 app.use('/api',apiRoutes);
 
 const PORT = process.env.PORT;
